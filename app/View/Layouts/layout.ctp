@@ -71,14 +71,9 @@
                     <div class="clear"></div>
                 </div>
             </div>
-
-
-
         <?php
             echo $this->fetch('content');
         ?>
-
-
             <div id="sidebar">
                 <div id="search">
                     <h2><?php echo __('Search');?></h2>
@@ -89,17 +84,19 @@
                     </form>
                 </div>
                 <div id="sb_container">
+                    <?php   if ($this->Session->read('Auth.User')){ ?>
                     <h2>
-                  <span class="list_user">
-                      <?php
-                          echo $this->Html->link(__('Add new post'), array('controller' => 'posts','action' => 'add'));
-                      ?>
-                  </span>
+                        <span class="list_user">
+                              <?php
+                                  echo $this->Html->link(__('Add new post'), array('controller' => 'posts','action' => 'add'));
+                              ?>
+                        </span>
                     </h2>
+                    <?php } ?>
                     <h2>
-                  <span class="list_user">
-                      <?php echo $this->Html->link(__('List users'), array('controller' => 'users','action' => 'index'));?>
-                  </span>
+                          <span class="list_user">
+                              <?php echo $this->Html->link(__('List users'), array('controller' => 'users','action' => 'index'));?>
+                          </span>
                     </h2>
                     <h2><span class="list_user">
                             <?php echo $this->html->link(__('Older Posts'), '#', array('onclick'=>'return false;')); ?>
