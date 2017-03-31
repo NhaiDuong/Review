@@ -103,7 +103,8 @@
                         </span></h2>
                     <div class="posts">
                         <ul>
-                            <?php if (isset($modified)){
+                            <?php if (Cache::read('modified')){
+                                $modified = Cache::read('modified');
                                 foreach ($modified as $modified){ ?>
                                     <li><?php echo $this->Html->link(__($modified['Post']['title']), array('controller' => 'posts', 'action' => 'view', 'slug' => $modified['Post']['slug']));?></a></li>
                                 <?php        }}?>
