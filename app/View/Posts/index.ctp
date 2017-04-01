@@ -1,4 +1,4 @@
-
+<?php //echo $this->element('sql_dump'); ?>
 <!-- START PAGE SOURCE -->
     <div id="content">
         <div class="notification">
@@ -12,6 +12,7 @@
         </div>
       <div id="left">
         <div class="post">
+            <!--nocache-->
             <?php
             if (isset($posts)){
                 foreach ($posts as $post){?>
@@ -64,6 +65,7 @@
                   </div>
             <?php }} ?>
         </div>
+          <!--nocache-->
         <div class="pagination clear">
           <div class="pre">
               <?php echo $this->Paginator->prev(__(''), array(), null, array('class' => 'prev disabled')); ?>

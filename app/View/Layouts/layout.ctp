@@ -25,6 +25,7 @@
                     <li><?php echo $this->Html->link(__('Home'),'/posts/index',array());?></a></li>
                     <li><?php echo $this->Html->link(__('Contact'),'/posts/index',array());?></a></li>
                     <li><?php echo $this->Html->link(__('About us'),'/posts/index',array());?></a></li>
+                    <!--nocache-->
                     <li>
                         <?php
                         if (isset($user)){
@@ -46,6 +47,7 @@
                         ?>
                     </li>
                 </ul>
+                <!--nocache-->
             </div>
             <div id="header">
                 <div id="featuredpost">
@@ -115,6 +117,7 @@
                             <?php echo $this->html->link(__('Latest Posts'), '#', array('onclick'=>'return false;')); ?>
                         </span>
                     </h2>
+                    <!--nocache-->
                     <div class="posts" id="latest">
                         <ul>
                             <?php if (isset($latest)){
@@ -123,6 +126,7 @@
                                 <?php        }}?>
                         </ul>
                     </div>
+                    <!--nocache-->
                 </div>
             </div>
             <div class="clear"></div>

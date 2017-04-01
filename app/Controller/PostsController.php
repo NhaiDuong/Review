@@ -13,8 +13,7 @@ class PostsController extends AppController {
      * @var array
      */
     public $components = array('Paginator', 'Session');
-
-
+    public $helpers = array('Cache');
 
     /**
      * index method
@@ -46,7 +45,7 @@ class PostsController extends AppController {
                 $this->Paginator->settings = array(
                     'Post' => array(
                         'limit' => 10,
-                        'order' => array('Post.created' => 'desc'
+                        'order' => array('Post.modified' => 'desc'
                         )
                     )
                 );
@@ -54,7 +53,6 @@ class PostsController extends AppController {
                 $this->set('posts', $this->Paginator->paginate());
             }
         }
-
         $this->oldest();
         $this->latest();
     }
@@ -212,8 +210,10 @@ class PostsController extends AppController {
     //function find the latest post
     public function latest(){
         $condition1 = array(
+            'fields' => array('title', 'slug'),
             'limit' => 10,
             'order' => 'Post.modified desc',
+            'recursive' => -1
         );
         $latest = $this->Post->find('all', $condition1);
         return $this->set('latest', $latest);

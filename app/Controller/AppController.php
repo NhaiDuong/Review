@@ -55,6 +55,9 @@ class AppController extends Controller {
             'authorize' => array('Controller') // Added this line
         )
     );
+    public $cacheAction = array(
+        'index' => array('callbacks' => true, 'duration' => 21600),
+    );
 
     public function beforeFilter() {
         $this->_setLanguage();
