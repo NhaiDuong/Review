@@ -36,4 +36,10 @@ class Post extends AppModel {
 //        }
 //        return $latest;
 //    }
+
+    public function paginateCount() {
+        // method body
+//        $model = 'Post';
+        return false;
+    }
 }

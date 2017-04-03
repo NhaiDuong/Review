@@ -12,7 +12,7 @@
         </div>
       <div id="left">
         <div class="post">
-
+            <!--nocache-->
             <?php
             if (isset($posts)){
                 foreach ($posts as $post){?>
@@ -47,13 +47,13 @@
                           ));
                           ?>
                       </h2>
-                          <!--nocache-->
+
                       <span class="postmeta">
                           <?php
                             echo __('By ') ,$post['User']['username'];
                           ?>
                       </span>
-                          <!--/nocache-->
+
                       </div>
                       <p><?php echo h($post['Post']['body']); ?>
                           <span class="readmore">
@@ -68,7 +68,7 @@
                     </p>
                   </div>
             <?php }} ?>
-
+            <!--/nocache-->
         </div>
         <div class="pagination clear">
           <div class="pre">
@@ -79,6 +79,3 @@
           </div>
         </div>
       </div>
-
-
-<!-- END PAGE SOURCE -->

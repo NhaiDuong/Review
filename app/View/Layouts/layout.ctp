@@ -47,7 +47,7 @@
                         ?>
                     </li>
                 </ul>
-                <!--nocache-->
+                <!--/nocache-->
             </div>
             <div id="header">
                 <div id="featuredpost">

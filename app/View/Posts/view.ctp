@@ -45,7 +45,7 @@
                                 ?>
 
                             </h2>
-                            <span class="postmeta"><?php echo __('By ').h($post['User']['username']); ?></span>
+                            <span class="postmeta"><?php echo __('By ').($post['User']['username']); ?></span>
                         </div>
                             <p><?php echo h($post['Post']['body']); ?></p>
                         <div id="comments" class="comments-list">

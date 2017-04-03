@@ -15,8 +15,8 @@ class PostsController extends AppController {
     public $components = array('Paginator', 'Session');
     public $helpers = array('Cache');
     public $cacheAction = array(
-//        'index' => array('callbacks' => true, 'duration' => 21600),
-        'index' => 36000,
+        'index' => array('callbacks' => true, 'duration' => 36000),
+//        'index' => 36000,
     );
 
     /**
@@ -25,6 +25,7 @@ class PostsController extends AppController {
      * @return void
      */
     public function index($keyword = null) {
+
         //load model user
         $this->loadModel('User');
         if ($this->Auth->user('id')){
@@ -48,13 +49,16 @@ class PostsController extends AppController {
             }else{
                 $this->Paginator->settings = array(
                     'Post' => array(
+                        'fields' => array('title', 'body', 'modified', 'created', 'slug', 'user_id', 'User.username', 'viewCount'),
                         'limit' => 10,
+//                        'recursive' => -1,
                         'order' => array('Post.modified' => 'desc'
                         )
                     )
                 );
                 $this->Post->recursive = 0;
                 $this->set('posts', $this->Paginator->paginate());
+//                var_dump($this->Paginator->paginate());die;
             }
         }
         $this->oldest();

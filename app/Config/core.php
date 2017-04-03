@@ -128,7 +128,7 @@ Configure::write('Config.language', 'eng');
  * Turn off all caching application-wide.
  *
  */
-	//Configure::write('Cache.disable', true);
+//	Configure::write('Cache.disable', true);
 
 /**
  * Enable cache checking.
@@ -139,7 +139,7 @@ Configure::write('Config.language', 'eng');
  * or in each action using $this->cacheAction = true.
  *
  */
-	Configure::write('Cache.check', true);
+	Configure::write('Cache.check', false);
 
 /**
  * Enable cache view prefixes.

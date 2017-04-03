@@ -52,7 +52,7 @@ class AppController extends Controller {
 //                    'passwordHasher' => 'Blowfish',
                 ),
             ),
-            'authorize' => array('Controller') // Added this line
+            'authorize' => array('Controller')
         )
     );
 
@@ -60,9 +60,6 @@ class AppController extends Controller {
     public function beforeFilter() {
         $this->_setLanguage();
         $this->Auth->allow('index', 'view', 'login');
-//        if ($this->Auth->user()){
-//            $this->set('authUser', $this->Auth->user());
-//        }
     }
 
     function _setLanguage() {
