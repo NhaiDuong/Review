@@ -139,7 +139,7 @@ Configure::write('Config.language', 'eng');
  * or in each action using $this->cacheAction = true.
  *
  */
-	Configure::write('Cache.check', false);
+	Configure::write('Cache.check', true);
 
 /**
  * Enable cache view prefixes.

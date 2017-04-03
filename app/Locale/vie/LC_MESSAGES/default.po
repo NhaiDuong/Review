@@ -4198,3 +4198,8 @@ msgstr "Vui lòng thử lại."
 msgid "Search"
 msgstr "Tìm kiếm"
 
+msgid "required at least 4 characters"
+msgstr "Yêu cầu ít nhất 4 ký tự"
+
+msgid "required at least 8 characters"
+msgstr "Yêu cầu ít nhất 8 ký tự"
