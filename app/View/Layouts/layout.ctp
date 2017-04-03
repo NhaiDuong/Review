@@ -126,7 +126,7 @@
                                 <?php        }}?>
                         </ul>
                     </div>
-                    <!--nocache-->
+                    <!--/nocache-->
                 </div>
             </div>
             <div class="clear"></div>
@@ -137,7 +137,6 @@
             <div id="about">
                 <div id="authorimage">
                     <?php echo $this->Html->image('/img/authorimg.png', array('width' => "108", 'height' => '108'));?>
-                    <!--            <img src="images/authorimg.png" width="108" height="108" alt="" /> -->
                 </div>
                 <div id="authorbio">
                     <h2><?php echo __('About');?></h2>

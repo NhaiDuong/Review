@@ -14,6 +14,10 @@ class PostsController extends AppController {
      */
     public $components = array('Paginator', 'Session');
     public $helpers = array('Cache');
+    public $cacheAction = array(
+//        'index' => array('callbacks' => true, 'duration' => 21600),
+        'index' => 36000,
+    );
 
     /**
      * index method

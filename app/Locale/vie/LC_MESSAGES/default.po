@@ -71,7 +71,7 @@ msgstr ""
 
 #: Controller/Component/AuthComponent.php:434
 msgid "You are not authorized to access that location."
-msgstr ""
+msgstr "Bạn không được phép truy cập trang, vui lòng đăng nhập."
 
 #: Error/ExceptionRenderer.php:225
 msgid "Not Found"

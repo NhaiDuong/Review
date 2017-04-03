@@ -12,7 +12,7 @@
         </div>
       <div id="left">
         <div class="post">
-            <!--nocache-->
+
             <?php
             if (isset($posts)){
                 foreach ($posts as $post){?>
@@ -27,10 +27,12 @@
                         </div>
                         <div class="comments">
                              <p>
+
                                   <?php echo $this->Html->image('/img/view.png', array('alt' => 'view', 'width' => '25', 'height' => '25'));?>
                                   <a href="#" class="view">
                                       <?php echo $post['Post']['viewCount'];?>
                                   </a>
+
                              </p>
                         </div>
                   </div>
@@ -45,11 +47,13 @@
                           ));
                           ?>
                       </h2>
+                          <!--nocache-->
                       <span class="postmeta">
                           <?php
                             echo __('By ') ,$post['User']['username'];
                           ?>
                       </span>
+                          <!--/nocache-->
                       </div>
                       <p><?php echo h($post['Post']['body']); ?>
                           <span class="readmore">
@@ -64,8 +68,8 @@
                     </p>
                   </div>
             <?php }} ?>
+
         </div>
-          <!--nocache-->
         <div class="pagination clear">
           <div class="pre">
               <?php echo $this->Paginator->prev(__(''), array(), null, array('class' => 'prev disabled')); ?>
