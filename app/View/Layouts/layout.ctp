@@ -29,10 +29,10 @@
                     <li>
                         <?php
                         if (isset($user)){
-                            echo $this->Html->link(__('Logout'),'/users/logout',array());
+                            echo $this->Html->link(__('Logout'), array('action'=>'logout', 'controller'=>'users'));
                         }
                         else
-                            echo $this->Html->link(__('Login'),'/users/login',array());
+                            echo $this->Html->link(__('Login'),'/users/login', array());
                         ?>
                     </li>
                 </ul>

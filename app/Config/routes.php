@@ -42,6 +42,7 @@
                 'slug', //pass through slug to my controller
             )
         ));
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

@@ -208,7 +208,7 @@ class PostsController extends AppController {
         if (($modified = Cache::read('modified')) === false) {
             $condition = array(
                 'limit' => 10,
-                'order' => 'Post.modified asc',
+                'order' => 'Post.created asc',
             );
             $modified = $this->Post->find('all', $condition);
             return Cache::write('modified', $modified);

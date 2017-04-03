@@ -55,16 +55,27 @@
                       </span>
 
                       </div>
-                      <p><?php echo h($post['Post']['body']); ?>
-                          <span class="readmore">
+                      <p>
+                          <?php
+                          if (strlen($post['Post']['body']) >= 200 ) {
+                              $body = substr($post['Post']['body'], 0, 200);
+                              echo $body . '...';
+                              ?>
+                              <span class="readmore">
                                 <?php
-                                    echo $this->Html->link(__('read more'), array(
-                                        'controller' => 'posts',
-                                        'action' => 'view',
-                                        'slug' => $post['Post']['slug']
-                                    ));
+                                echo $this->Html->link(__('read more'), array(
+                                    'controller' => 'posts',
+                                    'action' => 'view',
+                                    'slug' => $post['Post']['slug']
+                                ));
                                 ?>
                           </span>
+                              <?php
+                          }
+                          else{
+                              echo $post['Post']['body'];
+                          }
+                              ?>
                     </p>
                   </div>
             <?php }} ?>
