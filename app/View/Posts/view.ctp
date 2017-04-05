@@ -74,23 +74,17 @@
                         </div>
                         <div class="comments-form">
                             <h3 id="respond">Add A Comment</h3>
-                            <form id="comment-form" action="#" method="post">
+                            <?php echo $this->Form->create('Comment', array('id'=>'comment-form')); ?>
                                 <p>
-                                    <input id="comment-name" value="" name="author"  type="text" class="formid" />
-                                    <label for="comment-name">Your Name <strong class="required">(required)</strong></label>
+                                    <?php  echo $this->Form->input('content', array('type'=>'textarea', 'label'=>'', 'cols'=>'50', 'rows'=>'8'));?>
                                 </p>
                                 <p>
-                                    <input id="comment-email" name="email" value="" type="text" class="formemail" />
-                                    <label for="comment-name">Your Email <strong class="required">(required)</strong></label>
-                                </p>
-                                <p>
-                                    <textarea name="comment" cols="50" rows="8"></textarea>
-                                </p>
-                                <p>
-                                    <input name="submit"  type="button" class="button" id="submit" tabindex="5" value="Submit" />
+                                    <?php echo $this->Form->end(__('Submit')); ?>
                                 </p>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <?php echo $this->element('sidebar');?>

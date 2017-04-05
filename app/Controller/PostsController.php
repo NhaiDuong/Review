@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+App::uses('SluggableBehavior', 'Utils.Behavior');
 /**
  * Posts Controller
  *
@@ -15,7 +16,7 @@ class PostsController extends AppController {
     public $components = array('Paginator', 'Session');
     public $helpers = array('Cache');
     public $cacheAction = array(
-        'index' => array('callbacks' => true, 'duration' => 36000),
+        'index' => array('callbacks' => true, 'duration' => 60),
 //        'index' => 36000,
     );
 
@@ -25,7 +26,6 @@ class PostsController extends AppController {
      * @return void
      */
     public function index($keyword = null) {
-
         //load model user
         $this->loadModel('User');
         if ($this->Auth->user('id')){
@@ -58,7 +58,6 @@ class PostsController extends AppController {
                 );
                 $this->Post->recursive = 0;
                 $this->set('posts', $this->Paginator->paginate());
-//                var_dump($this->Paginator->paginate());die;
             }
         }
         $this->oldest();

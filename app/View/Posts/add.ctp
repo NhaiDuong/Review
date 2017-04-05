@@ -17,6 +17,6 @@
                 <?php echo $this->Form->button(__('Save', array('class' => 'button'))); ?>
             </div>
 <!-- END PAGE SOURCE -->
-
+            <?php echo $this->element('sidebar');?>
 
 

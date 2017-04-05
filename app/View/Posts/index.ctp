@@ -1,3 +1,4 @@
+<?php echo $this->element('search');?>
 <?php //echo $this->element('sql_dump'); ?>
 <!-- START PAGE SOURCE -->
     <div id="content">
@@ -90,3 +91,4 @@
           </div>
         </div>
       </div>
+<?php echo $this->element('sidebar');?>

@@ -17,20 +17,7 @@
 <!--                --><?php //echo $this->Form->input('slug', array('placeholder' => 'slug', 'label' => '')); ?>
                 <?php echo $this->Form->button(__('Save', array('class' => 'button'))); ?>
             </div>
-            <div id="sidebar">
-
-                <div id="sb_container">
-                    <h2>
-                    <span class="list_user">
-                        <?php echo $this->Html->link(__('List users'), array('controller' => 'users','action' => 'index'));?>
-                    </span>
-                    </h2>
-
-            </div>
-            <div class="clear"></div>
-        </div>
-
-
+            <?php echo $this->element('sidebar');?>
 <!-- END PAGE SOURCE -->
 
 

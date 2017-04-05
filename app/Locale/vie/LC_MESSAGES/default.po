@@ -4203,3 +4203,9 @@ msgstr "Yêu cầu ít nhất 4 ký tự"
 
 msgid "required at least 8 characters"
 msgstr "Yêu cầu ít nhất 8 ký tự"
+
+msgid "Your post has been saved."
+msgstr "Đã  lưu bài viết."
+
+msgid "Post was deleted"
+msgstr "Đã xóa bài viết."
