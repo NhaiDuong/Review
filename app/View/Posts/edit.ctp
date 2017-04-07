@@ -14,7 +14,7 @@
                 <?php echo $this->Form->create('Post', array('id' => 'comment-form')); ?>
                 <?php echo $this->Form->input('title',array('placeholder' => 'Title', 'id' => 'comment-name', 'class' => 'formid', 'label' => '')); ?>
                 <?php echo $this->Form->input('body', array('placeholder' => 'Body', 'label' => '', 'type' => 'textarea', 'rows' => 15)); ?>
-<!--                --><?php //echo $this->Form->input('slug', array('placeholder' => 'slug', 'label' => '')); ?>
+<!--                --><?php //echo $this->Form->input('id', array('type' => 'hidden'));?>
                 <?php echo $this->Form->button(__('Save', array('class' => 'button'))); ?>
             </div>
             <?php echo $this->element('sidebar');?>

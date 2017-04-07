@@ -1,6 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
-App::uses('SluggableBehavior', 'Utils.Behavior');
+App::uses('SluggableBehavior', 'Utils/Behavior');
 /**
  * Posts Controller
  *
@@ -16,9 +16,10 @@ class PostsController extends AppController {
     public $components = array('Paginator', 'Session');
     public $helpers = array('Cache');
     public $cacheAction = array(
-        'index' => array('callbacks' => true, 'duration' => 60),
+        'index' => array('callbacks' => true, 'duration' => 30),
 //        'index' => 36000,
     );
+    public $actsAs = array('Utils.Sluggable');
 
     /**
      * index method
@@ -103,8 +104,8 @@ class PostsController extends AppController {
                 $this->Session->setFlash(__('You must login first.'), 'default', array(), 'login');
             }else{
                 $this->request->data['Post']['user_id'] = $this->Auth->user('id');
-                $title = $this->request->data['Post']['title'];
-                $this->request->data['Post']['slug'] = $this->createSlug($title);
+//                $title = $this->request->data['Post']['title'];
+//                $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
                 if ($this->Post->save($this->request->data)) {
                     $this->Session->setFlash(__('Your post has been saved.'), 'default', array(), 'addPostSuccess');
                     return $this->redirect(array('action' => 'index'));
@@ -130,9 +131,10 @@ class PostsController extends AppController {
         if (!$post) {
             throw new NotFoundException(__('Invalid post'));
         }
-
-        if ($this->request->is('post')) {
+        if ($this->request->is('post') || $this->request->is('put')) {
             $this->Post->id = $id;
+            $title = $this->request->data['Post']['title'];
+            $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been saved.'), 'default', array(), 'addPostSuccess');
                 return $this->redirect(array('action' => 'index'));
@@ -181,33 +183,33 @@ class PostsController extends AppController {
         return parent::isAuthorized($user);
     }
 
-    function createSlug ($string, $id=null) {
-        $slug = Inflector::slug ($string,'-');
-        $slug = strtolower($slug);
-        $i = 0;
-        $params = array ();
-        $params ['conditions']= array();
-        $params ['conditions']['Post.slug']= $slug;
-        if (!is_null($id)) {
-            $params ['conditions']['not'] = array('Post.id'=>$id);
-        }
-        while (count($this->Post->find ('all',$params))) {
-            if (!preg_match ('/-{1}[0-9]+$/', $slug )) {
-                $slug .= '-' . ++$i;
-            } else {
-                $slug = preg_replace ('/[0-9]+$/', ++$i, $slug );
-            }
-            $params ['conditions']['Post.slug']= $slug;
-        }
-        return $slug;
-    }
+//    function createSlug ($string, $id=null) {
+//        $slug = Inflector::slug ($string,'-');
+//        $slug = strtolower($slug);
+//        $i = 0;
+//        $params = array ();
+//        $params ['conditions']= array();
+//        $params ['conditions']['Post.slug']= $slug;
+//        if (!is_null($id)) {
+//            $params ['conditions']['not'] = array('Post.id'=>$id);
+//        }
+//        while (count($this->Post->find ('all',$params))) {
+//            if (!preg_match ('/-{1}[0-9]+$/', $slug )) {
+//                $slug .= '-' . ++$i;
+//            } else {
+//                $slug = preg_replace ('/[0-9]+$/', ++$i, $slug );
+//            }
+//            $params ['conditions']['Post.slug']= $slug;
+//        }
+//        return $slug;
+//    }
 
     //find the oldest modified posts
     public function oldest(){
         if (($modified = Cache::read('modified')) === false) {
             $condition = array(
                 'limit' => 10,
-                'order' => 'Post.created asc',
+                'order' => 'Post.modified asc',
             );
             $modified = $this->Post->find('all', $condition);
             return Cache::write('modified', $modified);

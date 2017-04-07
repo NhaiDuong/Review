@@ -28,10 +28,10 @@ class Post extends AppModel {
         return $this->field('id', array('id' => $post, 'user_id' => $user)) !== false;
     }
 
-//    public  $actsAs = array('Sluggable.Sluggable' => array(
-//        'label'=>'title',
-//        'slug'=>'slug',
-//        'separator'=>'-',
-//        'overwrite'=>true
-//    ));
+    public  $actsAs = array('Sluggable.Sluggable' => array(
+        'label'=>'title',
+        'slug'=>'slug',
+        'separator'=>'-',
+        'overwrite'=>true
+    ));
 }
