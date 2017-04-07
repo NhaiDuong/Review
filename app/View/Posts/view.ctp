@@ -25,6 +25,7 @@
                         <div class="postheader">
                             <h2>
                                 <?php echo h($post['Post']['title']);?>
+                                <?php if ($this->Session->read('Auth.User')['id'] == $post['User']['id']):?>
                                 <?php
                                     echo $this->Html->image("/img/edit.png", array(
                                         'alt' => 'edit',
@@ -43,7 +44,7 @@
                                     'url' => array('controller' => 'posts', 'action' => 'delete', $post['Post']['id'])
                                 ));
                                 ?>
-
+                            <?php endif; ?>
                             </h2>
                             <span class="postmeta"><?php echo __('By ').($post['User']['username']); ?></span>
                         </div>

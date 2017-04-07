@@ -32,6 +32,7 @@ class Post extends AppModel {
         'label'=>'title',
         'slug'=>'slug',
         'separator'=>'-',
-        'overwrite'=>true
+        'overwrite'=>true,
+        'lower'=>true,
     ));
 }

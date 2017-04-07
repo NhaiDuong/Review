@@ -3,24 +3,24 @@
     <div id="sb_container">
         <?php
         if ($this->Session->read('Auth.User')){
-//                        echo "náhdf";die;
             ?>
             <h2>
-                        <span class="list_user">
-                              <?php
-                              echo $this->Html->link(__('Add new post'), array('controller' => 'posts','action' => 'add'));
-                              ?>
-                        </span>
+                <span class="list_user">
+                    <?php
+                        echo $this->Html->link(__('Add new post'), array('controller' => 'posts','action' => 'add'));
+                    ?>
+                </span>
             </h2>
         <?php } ?>
         <h2>
-                          <span class="list_user">
-                              <?php echo $this->Html->link(__('List users'), array('controller' => 'users','action' => 'index'));?>
-                          </span>
+              <span class="list_user">
+                  <?php echo $this->Html->link(__('List users'), array('controller' => 'users','action' => 'index'));?>
+              </span>
         </h2>
-        <h2><span class="list_user">
-                            <?php echo $this->html->link(__('Older Posts'), '#', array('onclick'=>'return false;')); ?>
-                        </span></h2>
+        <h2>
+            <span class="list_user">
+                <?php echo $this->html->link(__('Older Posts'), '#', array('onclick'=>'return false;')); ?>
+            </span></h2>
         <div class="posts">
             <ul>
                 <?php if (Cache::read('modified')){
@@ -31,9 +31,9 @@
             </ul>
         </div>
         <h2>
-                        <span class="list_user">
-                            <?php echo $this->html->link(__('Latest Posts'), '#', array('onclick'=>'return false;')); ?>
-                        </span>
+            <span class="list_user">
+                <?php echo $this->html->link(__('Latest Posts'), '#', array('onclick'=>'return false;')); ?>
+            </span>
         </h2>
         <!--nocache-->
         <div class="posts" id="latest">

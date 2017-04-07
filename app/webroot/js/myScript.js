@@ -1,7 +1,6 @@
 /**
  * Created by Duong Nhai on 3/30/2017.
  */
-$(document).ready(function () {
     $.ajax({
         url: '/posts/index',
         cache: false,
@@ -11,4 +10,3 @@ $(document).ready(function () {
             $('#latest').html(latest);
         }
     });
-});
