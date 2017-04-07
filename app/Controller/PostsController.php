@@ -104,8 +104,8 @@ class PostsController extends AppController {
                 $this->Session->setFlash(__('You must login first.'), 'default', array(), 'login');
             }else{
                 $this->request->data['Post']['user_id'] = $this->Auth->user('id');
-//                $title = $this->request->data['Post']['title'];
-//                $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
+                $title = $this->request->data['Post']['title'];
+                $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
                 if ($this->Post->save($this->request->data)) {
                     $this->Session->setFlash(__('Your post has been saved.'), 'default', array(), 'addPostSuccess');
                     return $this->redirect(array('action' => 'index'));
@@ -183,26 +183,6 @@ class PostsController extends AppController {
         return parent::isAuthorized($user);
     }
 
-//    function createSlug ($string, $id=null) {
-//        $slug = Inflector::slug ($string,'-');
-//        $slug = strtolower($slug);
-//        $i = 0;
-//        $params = array ();
-//        $params ['conditions']= array();
-//        $params ['conditions']['Post.slug']= $slug;
-//        if (!is_null($id)) {
-//            $params ['conditions']['not'] = array('Post.id'=>$id);
-//        }
-//        while (count($this->Post->find ('all',$params))) {
-//            if (!preg_match ('/-{1}[0-9]+$/', $slug )) {
-//                $slug .= '-' . ++$i;
-//            } else {
-//                $slug = preg_replace ('/[0-9]+$/', ++$i, $slug );
-//            }
-//            $params ['conditions']['Post.slug']= $slug;
-//        }
-//        return $slug;
-//    }
 
     //find the oldest modified posts
     public function oldest(){
@@ -227,4 +207,19 @@ class PostsController extends AppController {
         $latest = $this->Post->find('all', $condition1);
         return $this->set('latest', $latest);
     }
+
+    //nhaidt
+
+    public function gen(){
+        $randstr = $this->getrandomstring(20);
+//        $a = '';
+//        for ($i=0; $i<strlen($randstr)-1; $i++){
+//            $result = substr($randstr, 0, 5);
+//            $a .= $result.' ';
+//        }
+
+        $this->set('result', $randstr);
+    }
+
+
 }
