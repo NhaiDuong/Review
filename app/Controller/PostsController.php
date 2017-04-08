@@ -90,7 +90,6 @@ class PostsController extends AppController {
         $this->latest();
     }
 
-
     /**
      * add method
      *
@@ -177,10 +176,8 @@ class PostsController extends AppController {
                 return true;
             }
         }
-
         return parent::isAuthorized($user);
     }
-
 
     //find the oldest modified posts
     public function oldest() {
@@ -221,5 +218,4 @@ class PostsController extends AppController {
         else
             $this->Session->setFlash(__('No result match!'), 'default', array(), 'noResult');
     }
-
 }
