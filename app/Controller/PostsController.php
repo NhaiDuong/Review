@@ -29,30 +29,17 @@ class PostsController extends AppController {
     public function index($keyword = null) {
         //load model user
         $this->loadModel('User');
-        if ($this->Auth->user('id')){
+        if ($this->Auth->user('id')) {
             $this->set('user', $this->Auth->user('id'));
         }
         if ($this->request->is('get')){
-            if(isset($this->params->query['keyword'])){
-                $keyword = $this->params->query['keyword'];
-                $con = array('Post.title' => $keyword);
-                $posts = $this->Post->find('all',array('conditions' => $con));
-                if ($posts){
-                    $this->Post->recursive = 0;
-                    $this->Paginator->settings = array(
-                        'limit' => 10,
-                        'conditions' => $con
-                    );
-                    $this->set('posts', $this->Paginator->paginate());
-                }
-                else
-                    $this->Session->setFlash(__('No result match!'), 'default', array(), 'noResult');
+            if(isset($this->params->query['keyword'])) {
+                $this->search($this->params->query['keyword']);
             }else{
                 $this->Paginator->settings = array(
                     'Post' => array(
                         'fields' => array('title', 'body', 'modified', 'created', 'slug', 'user_id', 'User.username', 'viewCount'),
                         'limit' => 10,
-//                        'recursive' => -1,
                         'order' => array('Post.modified' => 'desc'
                         )
                     )
@@ -84,10 +71,21 @@ class PostsController extends AppController {
         $this->Post->updateAll(
             array('Post.viewCount' => 'Post.viewCount + 1'),
             array('Post.slug' => $slug)
-
         );
-        $this->set(compact('post'));
-
+        if(isset($this->params->query['keyword'])) {
+            $this->redirect(
+                    array(
+                        "controller" => "posts",
+                        "action" => "index",
+                        "?" => array(
+                            "keyword" => $this->params->query['keyword']
+                        )
+                    )
+            );
+            $this->search($this->params->query['keyword']);
+        }else {
+            $this->set(compact('post'));
+        }
         $this->oldest();
         $this->latest();
     }
@@ -185,7 +183,7 @@ class PostsController extends AppController {
 
 
     //find the oldest modified posts
-    public function oldest(){
+    public function oldest() {
         if (($modified = Cache::read('modified')) === false) {
             $condition = array(
                 'limit' => 10,
@@ -197,7 +195,7 @@ class PostsController extends AppController {
     }
 
     //function find the latest post
-    public function latest(){
+    public function latest() {
         $condition1 = array(
             'fields' => array('title', 'slug'),
             'limit' => 10,
@@ -208,18 +206,20 @@ class PostsController extends AppController {
         return $this->set('latest', $latest);
     }
 
-    //nhaidt
-
-    public function gen(){
-        $randstr = $this->getrandomstring(20);
-//        $a = '';
-//        for ($i=0; $i<strlen($randstr)-1; $i++){
-//            $result = substr($randstr, 0, 5);
-//            $a .= $result.' ';
-//        }
-
-        $this->set('result', $randstr);
+    //function search for posts' title
+    public function search($keyword) {
+        $con = array('Post.title' => $keyword);
+        $posts = $this->Post->find('all',array('conditions' => $con));
+        if ($posts){
+            $this->Post->recursive = 0;
+            $this->Paginator->settings = array(
+                'limit' => 10,
+                'conditions' => $con
+            );
+            $this->set('posts', $this->Paginator->paginate());
+        }
+        else
+            $this->Session->setFlash(__('No result match!'), 'default', array(), 'noResult');
     }
-
 
 }

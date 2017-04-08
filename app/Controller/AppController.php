@@ -79,8 +79,6 @@ class AppController extends Controller {
         }
         else if (isset($this->params['language']) && ($this->params['language']
                 !=  $this->Session->read('Config.language'))) {
-
-// ADD THIS
             switch( $this->params['language'] ) {
                 case 'vie':
                     $lang = 'vie';

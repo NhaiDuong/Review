@@ -1,3 +1,4 @@
+<?php echo $this->element('search');?>
 <!-- START PAGE SOURCE -->
 <div id="content">
     <div id="left">

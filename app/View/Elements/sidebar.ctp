@@ -1,3 +1,4 @@
+<?php //echo $this->element('search');?>
 <div id="sidebar">
 <!--    --><?php //echo $this->element('search');?>
     <div id="sb_container">

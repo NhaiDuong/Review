@@ -26,7 +26,6 @@ class UsersController extends AppController {
                 return $this->redirect(array('action' => 'index'));
             }
             $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array(), 'addError');
-
         }
     }
 
@@ -38,7 +37,7 @@ class UsersController extends AppController {
         if ($this->request->is('post') || $this->request->is('put')) {
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'), 'default', array(), 'editSuccess');
-                return $this->redirect(array('action' => 'index'));
+                return $this->redirect(array('controller' => 'users', 'action' => 'index'));
             }
             $this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'default', array(), 'editError');
         } else {
@@ -56,10 +55,10 @@ class UsersController extends AppController {
         }
         if ($this->User->delete()) {
             $this->Session->setFlash(__('User was deleted'), 'default', array(), 'deleteSuccess');
-            return $this->redirect(array('action' => 'index'));
+            return $this->redirect(array('controller'=>'users', 'action' => 'index'));
         }
         $this->Session->setFlash(__('User was not deleted'), 'default', array(), 'deleteError');
-        return $this->redirect(array('action' => 'index'));
+        return $this->redirect(array('controller'=>'users', 'action' => 'index'));
     }
 
     public function beforeFilter() {
