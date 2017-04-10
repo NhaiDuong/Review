@@ -21,8 +21,8 @@
             <h1 id="sitename">Blog</h1>
             <ul id="nav">
                 <li><?php echo $this->Html->link(__('Home'),'/posts/index',array());?></a></li>
-                <li><?php echo $this->Html->link(__('Contact'),'/posts/index',array());?></a></li>
-                <li><?php echo $this->Html->link(__('About us'),'/posts/index',array());?></a></li>
+<!--                <li>--><?php //echo $this->Html->link(__('Contact'),'/posts/index',array());?><!--</a></li>-->
+<!--                <li>--><?php //echo $this->Html->link(__('About us'),'/posts/index',array());?><!--</a></li>-->
                 <!--nocache-->
                 <!--                    <li>-->
                 <?php

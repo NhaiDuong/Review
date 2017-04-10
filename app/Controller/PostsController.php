@@ -1,6 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
-App::uses('SluggableBehavior', 'Utils/Behavior');
+App::uses('SluggableBehavior', 'Utils/Model/Behavior');
 /**
  * Posts Controller
  *
