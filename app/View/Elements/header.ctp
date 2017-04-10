@@ -70,7 +70,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit facilisis viverra. Nullam id tristique arcu.
                         Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vehicula eros commodo est vestibulum cursus..
                         <span class="readmore">
-                  <a href="#"><?php echo __('read more');?></a>
+                  <?php echo $this->Html->link(__('read more'), array('controller'=>'posts', 'action'=>'view', 'slug'=>'hello-world'));?>
               </span>
                     </p>
                 </div>

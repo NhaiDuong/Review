@@ -4143,22 +4143,6 @@ msgstr "Nhãn"
 msgid "Design by"
 msgstr "Thiết kế bởi"
 
-msgid ""
-"The modern English word blue comes from Middle English bleu or blewe, from "
-"the Old French bleu, a word of Germanic origin related to Old Dutch, Old "
-"High German,[2] Old Saxon blāo and Old Frisian blāw, blau.[3][4] The clear "
-"sky and the deep sea appear blue because of an optical effect known as "
-"Rayleigh scattering. When sunlight passes through the atmosphere, the blue "
-"wavelengths are scattered more widely by the oxygen and nitrogen molecules, "
-"and more blue comes to our eyes."
-msgstr ""
-"Từ tiếng Anh hiện đại màu xanh đến từ tiếng Anh bleu hoặc blewe, từ tiếng "
-"Pháp bleu, một từ có nguồn gốc tiếng Đức liên quan đến Old Dutch, Old High "
-"German, [2] Old Saxon blāo và Old Frisian blāw, blau [3] 4] Bầu trời trong "
-"lành và biển sâu xuất hiện màu xanh vì có hiệu ứng quang học được gọi là tán "
-"xạ Rayleigh. Khi ánh sáng mặt trời đi qua bầu khí quyển, các bước sóng màu "
-"xanh được phân tán rộng rãi hơn bởi các phân tử oxy và nitơ."
-
 msgid "By "
 msgstr "Bởi "
 
@@ -4209,3 +4193,9 @@ msgstr "Đã  lưu bài viết."
 
 msgid "Post was deleted"
 msgstr "Đã xóa bài viết."
+
+msgid "Funtap joint stock Company"
+msgstr "Công ty Cổ Phần Funtap"
+
+msgid "8th Floor, 315 Truong Chinh, Thanh Xuan, Ha Noi"
+msgstr "Tầng 8, Toàn Nhà 315 Trường Chinh, Hà Nội"
