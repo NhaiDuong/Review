@@ -1,6 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
-App::uses('SluggableBehavior', 'Utils/Model/Behavior');
+//App::uses('SluggableBehavior', 'Sluggable.Model');
 /**
  * Posts Controller
  *
@@ -19,7 +19,6 @@ class PostsController extends AppController {
         'index' => array('callbacks' => true, 'duration' => 30),
 //        'index' => 36000,
     );
-    public $actsAs = array('Utils.Sluggable');
 
     /**
      * index method
@@ -101,8 +100,8 @@ class PostsController extends AppController {
                 $this->Session->setFlash(__('You must login first.'), 'default', array(), 'login');
             }else{
                 $this->request->data['Post']['user_id'] = $this->Auth->user('id');
-                $title = $this->request->data['Post']['title'];
-                $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
+//                $title = $this->request->data['Post']['title'];
+//                $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
                 if ($this->Post->save($this->request->data)) {
                     $this->Session->setFlash(__('Your post has been saved.'), 'default', array(), 'addPostSuccess');
                     return $this->redirect(array('action' => 'index'));
@@ -130,8 +129,8 @@ class PostsController extends AppController {
         }
         if ($this->request->is('post') || $this->request->is('put')) {
             $this->Post->id = $id;
-            $title = $this->request->data['Post']['title'];
-            $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
+//            $title = $this->request->data['Post']['title'];
+//            $this->request->data['Post']['slug'] = Inflector::slug($title ,'-');
             if ($this->Post->save($this->request->data)) {
                 $this->Session->setFlash(__('Your post has been saved.'), 'default', array(), 'addPostSuccess');
                 return $this->redirect(array('action' => 'index'));

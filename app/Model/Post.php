@@ -1,5 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
+//App::uses('SluggableBehavior', 'Model/Behavior');
+App::uses('SluggableBehavior', 'Model/Behavior');
 /**
  * Post Model
  *
@@ -28,11 +30,15 @@ class Post extends AppModel {
         return $this->field('id', array('id' => $post, 'user_id' => $user)) !== false;
     }
 
-    public  $actsAs = array('Sluggable.Sluggable' => array(
-        'label'=>'title',
-        'slug'=>'slug',
-        'separator'=>'-',
-        'overwrite'=>true,
-        'lower'=>true,
-    ));
+    public $useTable = 'posts';
+
+    public $actsAs = array(
+        'Sluggable.Sluggable' => array(
+            'field'     => 'title',  // Field that will be slugged
+            'slug'      => 'slug',  // Field that will be used for the slug
+            'lowercase' => true,    // Do we lowercase the slug ?
+            'separator' => '-',     //
+            'overwrite' => false    // Does the slug is auto generated when field is saved no matter what
+        )
+    );
 }

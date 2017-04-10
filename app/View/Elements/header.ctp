@@ -67,8 +67,7 @@
                 </div>
                 <div id="featuredcontent">
                     <h2><span>Hello World</span></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam blandit facilisis viverra. Nullam id tristique arcu.
-                        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla vehicula eros commodo est vestibulum cursus..
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s ...
                         <span class="readmore">
                   <?php echo $this->Html->link(__('read more'), array('controller'=>'posts', 'action'=>'view', 'slug'=>'hello-world'));?>
               </span>

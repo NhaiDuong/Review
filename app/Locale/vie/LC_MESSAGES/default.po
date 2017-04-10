@@ -4199,3 +4199,9 @@ msgstr "Công ty Cổ Phần Funtap"
 
 msgid "8th Floor, 315 Truong Chinh, Thanh Xuan, Ha Noi"
 msgstr "Tầng 8, Toàn Nhà 315 Trường Chinh, Hà Nội"
+
+msgid "You haven't had any account"
+msgstr "Bạn chưa có tài khoản"
+
+msgid "Register here."
+msgstr "Tạo mới tại đây."

@@ -1,2 +1,2 @@
-1491795030
-a:2:{i:0;b:0;s:3:"app";a:1:{s:7:"plugins";a:3:{i:0;s:10:"Migrations";i:1;s:9:"Sluggable";i:2;s:5:"Utils";}}}
+1491815984
+a:2:{i:0;b:0;s:3:"app";a:1:{s:7:"plugins";a:4:{i:0;s:3:"App";i:1;s:10:"Migrations";i:2;s:9:"Sluggable";i:3;s:5:"Utils";}}}
