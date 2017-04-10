@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09b0dc6b-5d90-4d76-8ef2-819eaddc0980" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/Sluggable/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/Sluggable/Model/Behavior/SluggableBehavior.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/Sluggable/Test/Case/Model/Behavior/SluggableBehaviorTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/Sluggable/Test/Fixture/PostFixture.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/Sluggable/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Plugin/utils/Model/Behavior/SluggableBehavior.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Config/bootstrap.php" afterPath="$PROJECT_DIR$/app/Config/bootstrap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Controller/PostsController.php" afterPath="$PROJECT_DIR$/app/Controller/PostsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Locale/vie/LC_MESSAGES/default.po" afterPath="$PROJECT_DIR$/app/Locale/vie/LC_MESSAGES/default.po" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Model/Post.php" afterPath="$PROJECT_DIR$/app/Model/Post.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Elements/footer.ctp" afterPath="$PROJECT_DIR$/app/View/Elements/footer.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Elements/header.ctp" afterPath="$PROJECT_DIR$/app/View/Elements/header.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/View/Users/login.ctp" afterPath="$PROJECT_DIR$/app/View/Users/login.ctp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/cake_modified" afterPath="$PROJECT_DIR$/app/tmp/cache/cake_modified" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_blogs_list" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_blogs_list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_blogs_users" afterPath="$PROJECT_DIR$/app/tmp/cache/models/myapp_cake_model_default_blogs_users" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_eng" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_cake_eng" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_default_eng" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_default_eng" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_file_map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_method_cache" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_object_map" afterPath="$PROJECT_DIR$/app/tmp/cache/persistent/myapp_cake_core_object_map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/webroot/css/main.css" afterPath="$PROJECT_DIR$/app/webroot/css/main.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,16 +35,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SluggableBehavior.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Plugin/utils/Model/Behavior/SluggableBehavior.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="bootstrap.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Config/bootstrap.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,8 +48,8 @@
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Model/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -970,12 +947,12 @@
       <workItem from="1491358332426" duration="16082000" />
       <workItem from="1491531435467" duration="21592000" />
       <workItem from="1491616723449" duration="8066000" />
-      <workItem from="1491791201238" duration="19021000" />
+      <workItem from="1491791201238" duration="19815000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199504000" />
+    <option name="totallyTimeSpent" value="200298000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1340,8 +1317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/Post.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="31" lean-forward="false" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
           <folding />
         </state>
       </provider>

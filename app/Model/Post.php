@@ -1,6 +1,5 @@
 <?php
 App::uses('AppModel', 'Model');
-//App::uses('SluggableBehavior', 'Model/Behavior');
 App::uses('SluggableBehavior', 'Model/Behavior');
 /**
  * Post Model
